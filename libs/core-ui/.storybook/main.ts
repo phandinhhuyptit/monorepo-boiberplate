@@ -9,8 +9,10 @@ const config: StorybookConfig = {
     '../src/lib/**/*.stories.mdx',
     '../src/lib/**/*.stories.@(js|jsx|ts|tsx)',
   ],
-  addons: ['@storybook/addon-essentials','./addons/toggle-nightmode-addon/preset.js',],
+  addons: ['@storybook/addon-essentials','./addons/toggle-nightmode-addon/preset.js'],
   async viteFinal(config: any) {
+
+    
     return mergeConfig(config, {
       plugins: [
         viteTsConfigPaths({
