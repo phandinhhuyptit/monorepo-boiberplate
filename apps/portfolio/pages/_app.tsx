@@ -8,6 +8,13 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Welcome to portfolio!</title>
       </Head>
+      <style jsx global>
+        {`
+          :root {
+            --font-public-sans:'Public Sans', sans-serif;
+          }
+        `}
+      </style>
       <main className="app">
         <Component {...pageProps} />
       </main>

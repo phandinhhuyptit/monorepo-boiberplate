@@ -1,2 +1,209 @@
-.container {
+.btn {
+  --default-border-solid: rgba(145, 158, 171, 0.32);
+  --primary-border-solid: rgba(0, 171, 85, 0.48);
+  --info-border-solid: rgba(0, 184, 217, 0.48);
+  --success-border-solid: rgba(54, 179, 126, 0.48);
+  --warning-border-solid: rgba(255, 171, 0, 0.48);
+  --error-border-solid: rgba(255, 86, 48, 0.48);
+  --secondary-border-solid: #7b1fa2;
+  --bg-hover-outline-error: rgba(211, 47, 47, 0.04);
+  --bg-hover-outline-warning: rgba(237, 108, 2, 0.04);
+  --bg-hover-outline-primary: rgba(0, 171, 85, 0.08);
+  --bg-hover-outline-info: rgba(2, 136, 209, 0.04);
+  --bg-hover-outline-secondary: rgba(156, 39, 176, 0.04);
+  --bg-hover-outline-success: rgba(46, 125, 50, 0.04);
+  --bg-hover-outline-default: rgba(0, 0, 0, 0.04);
+  --disable-text-outline: rgba(145, 158, 171, 0.8);
+  --disable-border-outline: rgba(145, 158, 171, 0.24);
+
+  @apply flex items-center justify-center rounded-lg transition;
+
+  // variant
+  &.contain {
+    // color
+    &.default {
+      color: var(--color-212b36);
+      background-color: var(--color-dfe3e8);
+    }
+    &.primary {
+      color: var(--color-ffffff);
+      background-color: var(--color-00ab55);
+      &:hover {
+        background-color: var(--color-007b55);
+      }
+    }
+    &.info {
+      color: var(--color-ffffff);
+      background-color: var(--color-00b8d9);
+      &:hover {
+        background-color: var(--color-01579b);
+      }
+    }
+    &.success {
+      color: var(--color-ffffff);
+      background-color: var(--color-36b37e);
+      &:hover {
+        background-color: var(--color-007b55);
+      }
+    }
+    &.warning {
+      color: var(--color-212b36);
+      background-color: var(--color-ffab00);
+      &:hover {
+        background-color: var(--color-e65100);
+      }
+    }
+    &.error {
+      color: var(--color-ffffff);
+      background-color: var(--color-ff5630);
+      &:hover {
+        background-color: var(--color-c62828);
+      }
+    }
+    &.secondary {
+      color: var(--color-ffffff);
+      background-color: var(--color-9c27b0);
+      &:hover {
+        background-color: var(--color-7b1fa2);
+      }
+    }
+
+    &:disabled {
+      @apply bg-[rgba(145,158,171,0.24)] text-[rgba(145,158,171,0.8)] cursor-not-allowed;
+    }
+    &:hover {
+      box-shadow: 0px 8px 16px rgba(0, 171, 85, 0.24);
+    }
+  }
+  &.outline {
+    // color
+    &.default {
+      color: var(--color-212b36);
+      border: 1px solid var(--default-border-solid);
+      &:hover {
+        @apply bg-[color:var(--bg-hover-outline-default)];
+      }
+    }
+    &.primary {
+      color: var(--color-00ab55);
+      border: 1px solid var(--primary-border-solid);
+      &:hover {
+        @apply bg-[color:var(--bg-hover-outline-primary)];
+      }
+    }
+    &.secondary {
+      color: var(--color-7b1fa2);
+      border: 1px solid var(--secondary-border-solid);
+      &:hover {
+        @apply bg-[color:var(--bg-hover-outline-secondary)];
+      }
+    }
+    &.info {
+      color: var(--color-00b8d9);
+      border: 1px solid var(--info-border-solid);
+      &:hover {
+        @apply bg-[color:var(--bg-hover-outline-info)];
+      }
+    }
+    &.success {
+      color: var(--color-36b37e);
+      border: 1px solid var(--success-border-solid);
+      &:hover {
+        @apply bg-[color:var(--bg-hover-outline-success)];
+      }
+    }
+    &.warning {
+      color: var(--color-ffab00);
+      border: 1px solid var(--warning-border-solid);
+      &:hover {
+        @apply bg-[color:var(--bg-hover-outline-warning)];
+      }
+    }
+    &.error {
+      color: var(--color-ff5630);
+      border: 1px solid var(--error-border-solid);
+      &:hover {
+        @apply bg-[color:var(--bg-hover-outline-error)];
+      }
+    }
+
+    &:disabled {
+      @apply bg-[color:var(--disable-border-outline)] text-[color:var(--disable-text-outline)] cursor-not-allowed hover:bg-[color:var(--disable-border-outline)];
+      border: none;
+    }
+  }
+
+  &.text {
+    // color
+    &.default {
+      color: var(--color-212b36);
+      &:hover {
+        @apply bg-[color:var(--bg-hover-outline-default)];
+      }
+    }
+    &.primary {
+      color: var(--color-00ab55);
+      &:hover {
+        @apply bg-[color:var(--bg-hover-outline-primary)];
+      }
+    }
+    &.secondary {
+        color: var(--color-7b1fa2);
+        &:hover {
+          @apply bg-[color:var(--bg-hover-outline-secondary)];
+        }
+      }
+    &.info {
+      color: var(--color-00b8d9);
+      &:hover {
+        @apply bg-[color:var(--bg-hover-outline-info)];
+      }
+    }
+    &.success {
+      color: var(--color-36b37e);
+      &:hover {
+        @apply bg-[color:var(--bg-hover-outline-success)];
+      }
+    }
+    &.warning {
+      color: var(--color-ffab00);
+      &:hover {
+        @apply bg-[color:var(--bg-hover-outline-warning)];
+      }
+    }
+    &.error {
+      color: var(--color-ff5630);
+      &:hover {
+        @apply bg-[color:var(--bg-hover-outline-error)];
+      }
+    }
+
+    &:disabled {
+      @apply bg-[color:var(--disable-border-outline)] text-[color:var(--disable-text-outline)] cursor-not-allowed hover:bg-[color:var(--bg-hover-outline-error)];
+    }
+  }
+  // size
+  &.large {
+    @apply px-[22px] py-[11px]  font-bold text-[15px];
+  }
+  &.medium {
+    @apply px-[16px] py-[6px]  font-bold text-[14px];
+  }
+  &.small {
+    @apply px-[10px] py-[4px]  font-bold text-[13px];
+  }
+}
+html:global(#night-mode) {
+  .btn {
+    &.outline {
+      &.default {
+        color: var(--color-ffffff);
+      }
+    }
+    &.text {
+      &.default {
+        color: var(--color-ffffff);
+      }
+    }
+  }
 }
