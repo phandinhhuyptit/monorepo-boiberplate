@@ -15,8 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@core-ui": ["libs/core-ui/src/index.ts"],
-      "@monorepo-boiberplate/share": ["libs/share/src/index.ts"]
+      "@core-ui": ["libs/core-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

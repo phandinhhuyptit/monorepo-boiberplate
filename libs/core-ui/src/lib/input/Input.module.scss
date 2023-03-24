@@ -1,7 +1,114 @@
-/*
- * Replace this with your own classes
- *
- * e.g.
- * .container {
- * }
-*/
+.input {
+  --border-solid: rgba(145, 158, 171, 0.32);
+  --border-solid-disable: rgba(145, 158, 171, 0.32);
+  --label-color: #919eab;
+  @apply relative w-full block rounded-lg px-[14px] py-[16px];
+
+  & > input {
+    & + .label {
+      @apply absolute left-[15px] text-[var(--label-color)];
+      transform: translate3d(0, 0, 0);
+      transition: all 0.2s ease;
+    }
+
+    &:focus {
+      outline: none;
+      & + .label {
+        @apply left-[10px] text-[15px] pl-[2px];
+        transform: translate3d(-6px, -26px, 0px) scale(0.75);
+      }
+      & ~ fieldset {
+        @apply border-[color:var(--color-212b36)];
+        & > legend {
+          @apply visible max-w-[100px];
+        }
+      }
+    }
+    &:hover {
+      & ~ fieldset {
+        @apply border-[color:var(--color-212b36)];
+      }
+    }
+    &:disabled {
+      & + .label {
+        @apply opacity-50 text-[color:var(--var-919eab)];
+      }
+
+      & ~ fieldset {
+        @apply border-[color:var(--border-solid-disable)];
+      }
+    }
+
+    &:not(:placeholder-shown) {
+      & + .label {
+        @apply left-[10px] text-[15px] pl-[2px];
+        transform: translate3d(-6px, -26px, 0px) scale(0.75);
+      }
+      & ~ fieldset {
+        @apply border-[color:var(--color-212b36)];
+        & > legend {
+          @apply visible max-w-[100px];
+        }
+      }
+    }
+
+    &.error {
+      & + .label {
+        @apply text-[var(--color-ff5630)];
+      }
+      & ~ fieldset {
+        @apply border-[color:var(--color-ff5630)];
+      }
+    }
+    @apply appearance-none w-full bg-[#ffffff00] text-[color:var(--color-212b36)];
+  }
+
+  &.prefix {
+    & > .icon-prefix {
+      @apply absolute;
+    }
+    & > input {
+      @apply pl-4;
+      & + .label {
+        @apply left-[30px];
+      }
+      &:focus {
+        & + .label {
+          @apply left-[10px];
+        }
+      }
+      &:not(:placeholder-shown) {
+        & + .label {
+          @apply left-[10px];
+        }
+      }
+    }
+  }
+
+  &.subfix {
+    & > .icon-subfix {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translate(-50%, -50%);
+    }
+    & > input {
+      @apply pr-4;
+    }
+  }
+
+  & > fieldset {
+    transition: all 0.2s ease-in-out;
+    & > legend {
+      @apply text-[13px] invisible block overflow-hidden w-auto max-w-[0.01px] p-0 whitespace-nowrap;
+      transition: max-width 50ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+      & > span {
+        @apply opacity-0 visible;
+      }
+    }
+    @apply absolute border border-[color:var(--border-solid)] px-[8px] py-0 rounded-lg border-solid top-[-10px] left-0 bottom-0 right-0;
+  }
+}
+html:global(#night-mode) {
+  --label-color: #637381;
+}
