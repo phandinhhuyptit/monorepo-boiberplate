@@ -86,6 +86,7 @@
     --z16-shadow: 0px 16px 32px -4px rgba(0, 0, 0, 0.16);
     --z20-shadow: 0px 20px 40px -4px rgba(0, 0, 0, 0.16);
     --z24-shadow: 0px 24px 48px rgba(0, 0, 0, 0.16);
+    --color-212b36: #ffffff;
   }
 
   body {
