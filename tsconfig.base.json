@@ -15,7 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@core-ui": ["libs/core-ui/src/index.ts"]
+      "@core-ui": ["libs/core-ui/src/index.ts"],
+      "@monorepo-boiberplate/shared/constants": [
+        "libs/shared/constants/src/index.ts"
+      ],
+      "@monorepo-boiberplate/shared/hooks": ["libs/shared/hooks/src/index.ts"],
+      "@monorepo-boiberplate/shared/type": ["libs/shared/type/src/index.ts"],
+      "@monorepo-boiberplate/shared/utils": ["libs/shared/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -9,9 +9,10 @@ export interface InputProps extends HTMLAttributes<HTMLInputElement> {
   iconPrefix?: ReactNode;
   iconSuffix?: ReactNode;
   error?: boolean;
-  color: 'primary' | 'secondary';
+  color?: 'primary' | 'secondary';
   disable?: boolean;
   label: string;
+  size?: 'medium' | 'small';
 }
 
 export const Input = forwardRef(
@@ -21,9 +22,11 @@ export const Input = forwardRef(
       inputSize = 'default',
       error = false,
       color = 'primary',
-      iconPrefix = <div></div>,
-      iconSuffix = <div></div>,
+      iconPrefix,
+      iconSuffix,
       label = 'Hello Fen',
+      size = 'small',
+      disable,
       ...props
     }: InputProps,
     ref: LegacyRef<HTMLInputElement>
@@ -32,24 +35,28 @@ export const Input = forwardRef(
       styles['input'],
       iconPrefix && styles['prefix'],
       iconSuffix && styles['subfix'],
+      size && styles[size],
     ]);
-    const classesInput = clsx([
-      error && styles['error'],
-      iconPrefix && styles['prefix'],
-    ]);
+    const classesInput = clsx([error && styles['error']]);
     return (
       <label htmlFor={label} className={classes}>
-        <div className={styles['icon-prefix']}>$</div>
+        {iconPrefix && (
+          <div className={styles['icon-prefix']}>{iconPrefix}</div>
+        )}
         <input
           className={classesInput}
           ref={ref}
           type="text"
           id={label}
           placeholder="&nbsp;"
+          disabled={disable}
           {...props}
         />
         <span className={styles['label']}>{label}</span>
-        <div className={styles['icon-subfix']}>$</div>
+        {iconSuffix && (
+          <div className={styles['icon-subfix']}>{iconSuffix}</div>
+        )}
+
         <fieldset className=" ">
           <legend>
             <span>{label}</span>

@@ -2,6 +2,8 @@ import type { StorybookConfig } from '@storybook/core-common';
 
 import { mergeConfig } from 'vite';
 import viteTsConfigPaths from 'vite-tsconfig-paths';
+import svgr from 'vite-plugin-svgr';
+import path from 'path';
 
 const config: StorybookConfig = {
   core: { builder: '@storybook/builder-vite' },
@@ -9,14 +11,22 @@ const config: StorybookConfig = {
     '../src/lib/**/*.stories.mdx',
     '../src/lib/**/*.stories.@(js|jsx|ts|tsx)',
   ],
-  addons: ['@storybook/addon-essentials','./addons/toggle-nightmode-addon/preset.js'],
+  addons: [
+    '@storybook/addon-essentials',
+    './addons/toggle-nightmode-addon/preset.js',
+  ],
   async viteFinal(config: any) {
-
-    
+    // config.resolve = {
+    //   alias: {
+    //     '@': path.resolve(__dirname, '../../../'),
+    //   },
+    // };
+    // console.log("config",config)
     return mergeConfig(config, {
       plugins: [
+        svgr(),
         viteTsConfigPaths({
-          root: '../../../',
+          root: '../../..',
         }),
       ],
     });

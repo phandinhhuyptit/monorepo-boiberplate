@@ -65,12 +65,12 @@
 
   &.prefix {
     & > .icon-prefix {
-      @apply absolute;
+      @apply absolute w-6 h-6;
     }
     & > input {
-      @apply pl-4;
+      @apply pl-6;
       & + .label {
-        @apply left-[30px];
+        @apply left-[40px];
       }
       &:focus {
         & + .label {
@@ -87,6 +87,7 @@
 
   &.subfix {
     & > .icon-subfix {
+      // @apply w-6 h-6;
       position: absolute;
       top: 50%;
       right: 12px;
@@ -94,6 +95,25 @@
     }
     & > input {
       @apply pr-4;
+    }
+  }
+
+  &.medium {
+    @apply h-[56px];
+  }
+  &.small {
+    @apply h-[40px] py-[10px];
+    & > input {
+      &:focus {
+        & + .label {
+          transform: translate3d(-6px, -21px, 0px) scale(0.75);
+        }
+      }
+      &:not(:placeholder-shown) {
+        & + .label {
+          transform: translate3d(-6px, -21px, 0px) scale(0.75);
+        }
+      }
     }
   }
 
