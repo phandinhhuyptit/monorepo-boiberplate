@@ -1,15 +1,20 @@
 import { ComponentPropsWithoutRef, forwardRef, LegacyRef } from 'react';
 import styles from './button.module.scss';
 
-/* eslint-disable-next-line */
-
 export type ButtonComponentProps = ComponentPropsWithoutRef<'a'> &
   ComponentPropsWithoutRef<'button'> & {
-    color?: 'primary' | 'default' | 'info' | 'success' | 'warning' | 'error'| 'secondary';
+    color?:
+      | 'primary'
+      | 'default'
+      | 'info'
+      | 'success'
+      | 'warning'
+      | 'error'
+      | 'secondary';
     size?: 'large' | 'medium' | 'small';
     element?: 'button' | 'link';
     variant?: 'contain' | 'outline' | 'text' | 'soft';
-    disable? :boolean
+    disable?: boolean;
   };
 
 export const Button = forwardRef<

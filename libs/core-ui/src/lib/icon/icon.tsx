@@ -1,9 +1,8 @@
 import { HTMLAttributes } from 'react';
 import ICONS from './svgs';
 import styles from './icon.module.scss';
-import { IconName } from '../../../../shared/type/src/index';
+import { IconName } from '@monorepo-boiberplate/shared/type';
 
-/* eslint-disable-next-line */
 export interface IconProps extends HTMLAttributes<HTMLSpanElement> {
   name: IconName;
   title?: string;
