@@ -2,7 +2,6 @@ import { HTMLAttributes, ReactNode, forwardRef, LegacyRef } from 'react';
 import styles from './input.module.scss';
 import clsx from 'clsx';
 
-/* eslint-disable-next-line */
 export interface InputProps extends HTMLAttributes<HTMLInputElement> {
   variant?: 'outlined' | 'filled' | 'standard';
   inputSize?: 'small' | 'default' | 'large';
