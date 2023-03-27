@@ -1,10 +1,10 @@
 import { HTMLAttributes } from 'react';
 import ICONS from './svgs';
 import styles from './icon.module.scss';
-// import { IconName } from '../../../../shared/type/src/index';
+import { IconName } from '@monorepo-boiberplate/shared/type';
 
 export interface IconProps extends HTMLAttributes<HTMLSpanElement> {
-  name: any;
+  name: IconName;
   title?: string;
 }
 
@@ -15,10 +15,10 @@ export function Icon({
   className = '',
   onClick,
 }: IconProps) {
-  // const Icon = ICONS[name];
+  const Icon = ICONS[name];
   return (
     <span className={`${className} ${styles['icon']}`} onClick={onClick}>
-      {/* <Icon title={title} style={{ display: 'inline', ...style }} /> */}
+      <Icon title={title} style={{ display: 'inline', ...style }} />
     </span>
   );
 }
