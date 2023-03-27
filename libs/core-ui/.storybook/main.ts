@@ -3,7 +3,6 @@ import type { StorybookConfig } from '@storybook/core-common';
 import { mergeConfig } from 'vite';
 import viteTsConfigPaths from 'vite-tsconfig-paths';
 import svgr from 'vite-plugin-svgr';
-import path from 'path';
 
 const config: StorybookConfig = {
   core: { builder: '@storybook/builder-vite' },
@@ -26,7 +25,7 @@ const config: StorybookConfig = {
       plugins: [
         svgr(),
         viteTsConfigPaths({
-          root: '../../..',
+          root: '../../../',
         }),
       ],
     });
