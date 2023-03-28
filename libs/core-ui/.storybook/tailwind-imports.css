@@ -71,9 +71,184 @@
     --z16-shadow: 0px 16px 32px -4px rgba(145, 158, 171, 0.16);
     --z20-shadow: 0px 20px 40px -4px rgba(145, 158, 171, 0.16);
     --z24-shadow: 0px 24px 48px rgba(145, 158, 171, 0.16);
+    /* DS V2 */
+
+    /* BASE */
+    --color-ffffff: #ffffff;
+    --color-fcfcfe: #fcfcfe;
+
+    /* SLATE */
+    --color-f6f8fc: #f6f8fc;
+    --color-f3f7ff: #f3f7ff;
+    --color-ecf3ff: #ecf3ff;
+
+    /* NEUTRAL */
+    --color-f5f5f5: #f5f5f5;
+    --color-e0e0e0: #e0e0e0;
+    --color-a4a4a4: #a4a4a4;
+    --color-6b6b6b: #6b6b6b;
+    --color-474747: #474747;
+    --color-2c2c2c: #2c2c2c;
+    --color-1a1c25: #1a1c25;
+
+    /* TURQUOISE */
+    --color-13ba9a: #13ba9a;
+    --color-defcf6: #defcf6;
+    --color-a6f2dc: #a6f2dc;
+    --color-006b56: #006b56;
+    --color-074035: #074035;
+    --color-13ba9a: #13ba9a; /* no change */
+
+    /* SEa green */
+    --color-e2f8f8: #e2f8f8;
+    --color-acecec: #acecec;
+    --color-28adad: #28adad;
+    --color-006c6c: #006c6c;
+    --color-083737: #083737;
+
+    /* BLUE */
+    --color-dbe5ff: #dbe5ff;
+    --color-99b6ff: #99b6ff;
+    --color-467aff: #467aff;
+    --color-1b4bc6: #1b4bc6;
+    --color-112862: #112862;
+    --color-13b3ea: #13b3ea;
+    --color-5494f8: #5494f8;
+
+    /* PURPLE */
+    --color-ebe6fe: #ebe6fe;
+    --color-c7bafc: #c7bafc;
+    --color-8f76fa: #8f76fa;
+    --color-5139b7: #5139b7;
+    --color-281f51: #281f51;
+
+    /* YELLOW */
+    --color-fff2db: #fff2db;
+    --color-ffdb99: #ffdb99;
+    --color-ffc04e: #ffc04e;
+    --color-cd8d1c: #cd8d1c;
+    --color-664d1f: #664d1f;
+    --color-f3ba2f: #f3ba2f;
+
+    /* RED */
+    --color-fbe0df: #fbe0df;
+    --color-fbe0df-rgb: 251, 224, 223;
+    --color-f5a5a3: #f5a5a3;
+    --color-ec5956: #ec5956;
+    --color-a32b29: #a32b29;
+    --color-551211: #551211;
+    --color-e84142: #e84142;
+
+    /* PINK */
+    --color-fdddec: #fdddec;
+    --color-fbb7d6: #fbb7d6;
+    --color-f667a9: #f667a9;
+    --color-ce3e80: #ce3e80;
+    --color-580e31: #580e31;
+
+    --color-input-hover: transparent;
+    --gradient-green-color: linear-gradient(
+      90.6deg,
+      #1ae5be -0.04%,
+      #35bac6 100.09%,
+      #35bac6 100.09%
+    );
+    --gradient-purple-color: linear-gradient(
+      95.41deg,
+      #467aff 0%,
+      rgba(142, 116, 252, 0.8) 100%
+    );
+
+
   }
 
   html#night-mode:root {
+
+     /* BASE */
+     --color-ffffff: #1a1c25;
+     --color-fcfcfe: #171821;
+ 
+     /* SLATE */
+     --color-f6f8fc: #1e212d;
+     --color-f3f7ff: #20263c;
+     --color-ecf3ff: #232e51;
+ 
+     /* NEUTRAL */
+     --color-f5f5f5: #2c2c2c;
+     --color-e0e0e0: #474747;
+     --color-a4a4a4: #6b6b6b;
+     --color-6b6b6b: #a4a4a4;
+     --color-474747: #e0e0e0;
+     --color-2c2c2c: #f5f5f5;
+     --color-1a1c25: #ffffff;
+ 
+     /* TURQUOISE */
+     --color-13ba9a: #13ba9a; /* no change */
+     --color-defcf6: #074035;
+     --color-a6f2dc: #006b56;
+     --color-006b56: #a6f2dc;
+     --color-074035: #defcf6;
+     --color-13ba9a: #13ba9a; /* no change */
+ 
+     /* SEa green */
+     --color-e2f8f8: #083737;
+     --color-acecec: #006c6c;
+     --color-28adad: #28adad; /* no change */
+     --color-006c6c: #acecec;
+     --color-083737: #e2f8f8;
+ 
+     /* BLUE */
+     --color-dbe5ff: #112862;
+     --color-99b6ff: #1b4bc6;
+     --color-467aff: #467aff; /* no change */
+     --color-1b4bc6: #99b6ff;
+     --color-112862: #dbe5ff;
+     --color-13b3ea: #13b3ea; /* no change */
+     --color-5494f8: #5494f8; /* no change */
+ 
+     /* PURPLE */
+     --color-ebe6fe: #281f51;
+     --color-c7bafc: #5139b7;
+     --color-8f76fa: #8f76fa; /* no change */
+     --color-5139b7: #c7bafc;
+     --color-281f51: #ebe6fe;
+ 
+     /* YELLOW */
+     --color-fff2db: #664d1f;
+     --color-ffdb99: #cd8d1c;
+     --color-ffc04e: #ffc04e; /* no change */
+     --color-cd8d1c: #ffdb99;
+     --color-664d1f: #fff2db;
+     --color-f3ba2f: #f3ba2f; /* no change */
+ 
+     /* RED */
+     --color-fbe0df: #551211;
+     --color-fbe0df-rgb: 85, 18, 17;
+     --color-f5a5a3: #a32b29;
+     --color-ec5956: #ec5956; /* no change */
+     --color-a32b29: #f5a5a3;
+     --color-551211: #fbe0df;
+     --color-e84142: #e84142; /* no change */
+ 
+     /* PINK */
+     --color-fdddec: #580e31;
+     --color-fbb7d6: #fbb7d6;
+     --color-f667a9: #f667a9; /* no change */
+     --color-ce3e80: #fbb7d6;
+     --color-580e31: #fdddec;
+ 
+     --color-input-hover: #222935;
+     --gradient-green-color: linear-gradient(
+       90.6deg,
+       rgb(40, 173, 173) -0.04%,
+       rgb(75, 148, 205) 100.09%
+     );
+     --gradient-purple-color: linear-gradient(
+       95.41deg,
+       #467aff 0%,
+       rgba(142, 116, 252, 0.8) 100%
+     );
+
     --card-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2),
       0px 12px 24px -4px rgba(0, 0, 0, 0.12);
     --dialog-shadow: -40px 40px 80px -8px rgba(0, 0, 0, 0.24);

@@ -11,7 +11,7 @@ export default {
 
 const Template: ComponentStory<typeof Icon> = (args) => {
   useEffect(() => {
-    const filter = document.getElementById('filter-icon');
+    const filter = document.getElementById('filter');
     const listIcons = document.getElementById('list-icons');
 
     filter?.addEventListener('keyup', function (e) {
@@ -43,16 +43,13 @@ const Template: ComponentStory<typeof Icon> = (args) => {
   const nameIcons = Object.keys(ICONS_NAME);
   return (
     <>
-      <Input size='medium' color='primary' label='filter-icon' id="filter-icon"/>
-      <ol
-        id="list-icons"
-        className="grid grid-cols-6 gap-5 bg-slate-200 p-10 list-decimal"
-      >
+      <Input size="medium" color="primary" label="filter" id="filter" />
+      <ol id="list-icons" className="grid grid-cols-6 gap-5 bg-slate-200 p-10">
         {nameIcons.map((name) => (
           <li data-key={ICONS_NAME[name as keyof typeof ICONS_NAME]}>
-            <div className="flex items-center gap-4">
-              {name}
+            <div className="flex items-center flex-col gap-4">
               <Icon name={name as IconName} style={{ height: 24, width: 24 }} />
+              {name}
             </div>
           </li>
         ))}
