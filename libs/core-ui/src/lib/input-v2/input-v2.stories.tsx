@@ -4,7 +4,7 @@ import { Input } from './input-v2';
 
 export default {
   component: Input,
-  title: 'Input',
+  title: 'WIDGETS V2/Input',
 } as ComponentMeta<typeof Input>;
 
 const Template: ComponentStory<typeof Input> = (args) => {
