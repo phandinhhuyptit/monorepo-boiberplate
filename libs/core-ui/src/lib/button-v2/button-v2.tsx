@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef, forwardRef, LegacyRef } from 'react';
-import styles from './button.module.scss';
+import styles from './button-v2.module.scss';
 
 /* eslint-disable-next-line */
 

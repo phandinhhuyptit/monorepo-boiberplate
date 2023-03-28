@@ -3,7 +3,7 @@ import { Button } from './button-v2';
 
 export default {
   component: Button,
-  title: 'Button',
+  title: 'WIDGETS V2/Button',
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => {
