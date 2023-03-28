@@ -44,7 +44,10 @@ const Template: ComponentStory<typeof Icon> = (args) => {
   return (
     <>
       <Input size="medium" color="primary" label="filter" id="filter" />
-      <ol id="list-icons" className="grid grid-cols-6 gap-5 bg-slate-200 p-10">
+      <ol
+        id="list-icons"
+        className="grid grid-cols-6 md:grid-cols-8 gap-5 bg-slate-200 p-10"
+      >
         {nameIcons.map((name) => (
           <li data-key={ICONS_NAME[name as keyof typeof ICONS_NAME]}>
             <div className="flex items-center flex-col gap-4">
