@@ -74,7 +74,6 @@
     /* DS V2 */
 
     /* BASE */
-    --color-ffffff: #ffffff;
     --color-fcfcfe: #fcfcfe;
 
     /* SLATE */
@@ -159,13 +158,12 @@
       rgba(142, 116, 252, 0.8) 100%
     );
 
-
   }
 
   html#night-mode:root {
 
      /* BASE */
-     --color-ffffff: #1a1c25;
+     --color-ffffff: #212b36;
      --color-fcfcfe: #171821;
  
      /* SLATE */
