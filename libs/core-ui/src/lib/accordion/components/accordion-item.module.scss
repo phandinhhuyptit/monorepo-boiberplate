@@ -1,0 +1,32 @@
+.accordion-item {
+  @apply flex flex-col mb-0;
+  transition: margin 0.2s ease-out;
+  overflow: hidden;
+  .content {
+    @apply invisible  max-h-0 opacity-0 bg-transparent px-4;
+    transition: all 0.2s ease-out;
+  }
+  &:has(input:checked) {
+    @apply mb-4;
+    transition: margin 0.2s ease-in;
+  }
+  input {
+    @apply h-0 invisible;
+    &:checked {
+      & ~ .content {
+        @apply bg-[var(--color-ffffff)] rounded-b-lg  rounded-t-none visible max-h-[300vh] opacity-100;
+        padding: 8px 16px 16px;
+        transition: all 0.2s ease-in;
+      }
+      & + label {
+        border-top: none;
+        @apply bg-[var(--color-ffffff)] rounded-none mb-4;
+        transition: all 0.2s ease-in;
+        span {
+          @apply -rotate-90;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+  }
+}
