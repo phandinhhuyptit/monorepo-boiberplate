@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { useEffect } from 'react';
 import { Input } from '../input/input';
 import { Icon } from './icon';
-import { ICONS_NAME } from '../../../../shared/constants/src/index';
+import { ICONS_NAME } from '@monorepo-boiberplate/shared/constants';
 import { IconName } from '@monorepo-boiberplate/shared/type';
 export default {
   component: Icon,
