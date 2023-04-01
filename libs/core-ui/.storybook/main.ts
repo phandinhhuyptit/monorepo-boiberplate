@@ -3,7 +3,7 @@ import type { StorybookConfig } from '@storybook/core-common';
 import { mergeConfig } from 'vite';
 import viteTsConfigPaths from 'vite-tsconfig-paths';
 import svgr from 'vite-plugin-svgr';
-
+import path from 'path';
 const config: StorybookConfig = {
   core: { builder: '@storybook/builder-vite' },
   stories: [
@@ -15,12 +15,23 @@ const config: StorybookConfig = {
     './addons/toggle-nightmode-addon/preset.js',
   ],
   async viteFinal(config: any) {
-    // config.resolve = {
-    //   alias: {
-    //     '@': path.resolve(__dirname, '../../../'),
-    //   },
-    // };
-    // console.log("config",config)
+    config.resolve = {
+      alias: {
+        '@monorepo-boiberplate/shared/constants': path.join(
+          __dirname,
+          '../../../libs/shared/constants/src/index.ts'
+        ),
+        '@monorepo-boiberplate/shared/utils': path.join(
+          __dirname,
+          '../../../libs/shared/utils/src/index.ts'
+        ),
+        '@monorepo-boiberplate/shared/hooks': path.join(
+          __dirname,
+          '../../../libs/shared/hooks/src/index.ts'
+        ),
+      },
+    };
+    console.log('config', config);
     return mergeConfig(config, {
       plugins: [
         svgr(),

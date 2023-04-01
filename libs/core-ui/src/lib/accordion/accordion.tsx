@@ -12,7 +12,7 @@ export const AccordionRoot: FC<AccordionProps> = ({
   name,
 }) => {
   const [multipleSelected, setMultipleSelected] = useState<boolean>(multiple);
-  console.log('name', name);
+
   return (
     <AccordionContextProvider
       value={{ multipleSelected, setMultipleSelected, name }}
