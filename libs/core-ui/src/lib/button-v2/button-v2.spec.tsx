@@ -1,14 +1,53 @@
-import { render, fireEvent, cleanup } from '@testing-library/react';
-import Button from './button-v2';
+import { render, fireEvent, cleanup, screen } from '@testing-library/react';
 
-const defaultProps = {
+import Button, { ButtonComponentProps } from './button-v2';
+import '@testing-library/jest-dom';
+
+const defaultProps: ButtonComponentProps = {
   onClick: jest.fn(),
-  text: 'Submit',
+  btnSize: 'default',
+  variant: 'primary',
+  color: 'primary',
+  name: 'primary',
 };
+describe('Button component', () => {
+  it('should render a button with the class of primary', () => {
+    render(<Button {...defaultProps}>{defaultProps?.name}</Button>);
+    const primaryButton = screen.getByRole('button', { name: /primary/i });
+    console.log('primaryButton', primaryButton);
+    expect(primaryButton).toBeTruthy();
+  });
+  it('should render a disable button with the class of primary', () => {
+    const { rerender } = render(
+      <Button {...defaultProps}>{defaultProps?.name}</Button>
+    );
+    const primaryButton = screen.getByRole('button', { name: /primary/i });
+    expect(primaryButton).toBeTruthy();
+    // change props
+    rerender(<Button {...defaultProps} disabled={true} />);
+    expect(primaryButton).toBeDisabled();
+  });
 
-describe('Button', () => {
-  it('should render successfully', () => {
-    const { baseElement } = render(<Button />);
-    expect(baseElement).toBeTruthy();
+  it('calls correct function on click', () => {
+    const onClick = jest.fn();
+    const { rerender } = render(
+      <Button {...defaultProps} onClick={onClick}>
+        {defaultProps?.name}
+      </Button>
+    );
+    const primaryButton = screen.getByRole('button', { name: /primary/i });
+    expect(primaryButton).toBeTruthy();
+    fireEvent.click(primaryButton);
+    expect(onClick).toHaveBeenCalled();
+  });
+
+  it('should render a button as a Link, checks for href attribute and primary class', () => {
+    render(
+      <Button {...defaultProps} element="link" href="/">
+        link
+      </Button>
+    );
+    const buttonAsLink = screen.getByRole('link', { name: /link/i });
+    expect(buttonAsLink).toHaveAttribute('href', '/');
   });
 });
