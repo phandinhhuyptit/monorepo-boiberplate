@@ -41,6 +41,7 @@ export const Button = forwardRef<
 
   return element === 'button' ? (
     <button
+      name={color}
       disabled={disable}
       ref={ref as LegacyRef<HTMLButtonElement>}
       className={classes}
