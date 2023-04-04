@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "storybook": "nx run core-ui:storybook",
+    "test-storybook": "nx test core-ui",
     "build-storybook": "nx run core-ui:build-storybook",
     "prepare": "husky install"
   },
@@ -19,7 +20,8 @@
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "prettier --write",
-      "eslint --fix"
+      "eslint --fix",
+      "yarn test-storybook"
     ],
     "*.{md,json,yml,yaml,html}": [
       "prettier --write"
