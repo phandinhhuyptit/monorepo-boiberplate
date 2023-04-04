@@ -1,10 +1,10 @@
-// import { render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
-// import Input from './input';
+import Input from './input';
 
-// describe('Input', () => {
-//   it('should render successfully', () => {
-//     const { baseElement } = render(<Input />);
-//     expect(baseElement).toBeTruthy();
-//   });
-// });
+describe('Input', () => {
+  it('should render successfully', () => {
+    const { baseElement } = render(<Input label="test" />);
+    expect(baseElement).toBeTruthy();
+  });
+});
