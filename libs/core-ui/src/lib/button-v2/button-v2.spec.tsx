@@ -14,7 +14,6 @@ describe('Button component', () => {
   it('should render a button with the class of primary', () => {
     render(<Button {...defaultProps}>{defaultProps?.name}</Button>);
     const primaryButton = screen.getByRole('button', { name: /primary/i });
-    console.log('primaryButton', primaryButton);
     expect(primaryButton).toBeTruthy();
   });
   it('should render a disable button with the class of primary', () => {
