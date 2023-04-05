@@ -40,9 +40,12 @@ export const Input = forwardRef(
     return (
       <label htmlFor={label} className={classes}>
         {iconPrefix && (
-          <div className={styles['icon-prefix']}>{iconPrefix}</div>
+          <div data-testid="icon-prefix" className={styles['icon-prefix']}>
+            {iconPrefix}
+          </div>
         )}
         <input
+          aria-label={label}
           className={classesInput}
           ref={ref}
           type="text"
@@ -53,7 +56,9 @@ export const Input = forwardRef(
         />
         <span className={styles['label']}>{label}</span>
         {iconSuffix && (
-          <div className={styles['icon-subfix']}>{iconSuffix}</div>
+          <div data-testid="icon-subfix" className={styles['icon-subfix']}>
+            {iconSuffix}
+          </div>
         )}
 
         <fieldset className=" ">
