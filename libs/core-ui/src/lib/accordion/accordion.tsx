@@ -13,9 +13,13 @@ export const AccordionRoot: FC<AccordionProps> = ({
 }) => {
   const [multipleSelected, setMultipleSelected] = useState<boolean>(multiple);
 
+  const onSetMultipleSelected = (isMultiSelected: boolean) => {
+    setMultipleSelected(isMultiSelected);
+  };
+
   return (
     <AccordionContextProvider
-      value={{ multipleSelected, setMultipleSelected, name }}
+      value={{ multipleSelected, onSetMultipleSelected, name }}
     >
       <div className={styles['accordion']}>{children}</div>
     </AccordionContextProvider>

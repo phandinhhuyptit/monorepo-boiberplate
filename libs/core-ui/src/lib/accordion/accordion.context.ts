@@ -1,13 +1,13 @@
 import { createContext, Dispatch, useContext, SetStateAction } from 'react';
 export interface AccordionContextProps {
   multipleSelected?: boolean;
-  setMultipleSelected: React.Dispatch<React.SetStateAction<boolean>> | null;
+  onSetMultipleSelected?: (isMultiSelected: boolean) => void;
   name: string | undefined;
 }
 
 const AccordionContext = createContext<AccordionContextProps>({
   multipleSelected: false,
-  setMultipleSelected: null,
+  onSetMultipleSelected: undefined,
   name: undefined,
 });
 
