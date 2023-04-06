@@ -15,7 +15,13 @@ const AccordionHeader = ({ title, icon, id }: AccordionHeaderProps) => {
   const nameInput = !multipleSelected ? name : undefined;
   return (
     <>
-      <input placeholder={id} type={typeInput} id={id} name={nameInput} />
+      <input
+        placeholder={id}
+        type={typeInput}
+        id={id}
+        data-testid={id}
+        name={nameInput}
+      />
       <label
         htmlFor={id}
         className={clsx([styles['accordion-header'], 'header'])}

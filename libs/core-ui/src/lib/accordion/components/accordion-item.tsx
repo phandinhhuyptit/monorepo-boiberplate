@@ -16,6 +16,7 @@ const AccordionItem = ({
 }: AccordionItemProps) => {
   return (
     <div
+      data-testid="accordion-item"
       className={clsx([
         styles['accordion-item'],
         open && styles['open'],
@@ -23,7 +24,9 @@ const AccordionItem = ({
       ])}
     >
       {header}
-      <div className={styles['content']}>{children}</div>
+      <div data-testid="accordion-content" className={styles['content']}>
+        {children}
+      </div>
     </div>
   );
 };
