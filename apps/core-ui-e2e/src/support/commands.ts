@@ -31,3 +31,24 @@ Cypress.Commands.add('login', (email, password) => {
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+// adapted from https://github.com/cypress-io/cypress/issues/249#issuecomment-670028947
+for (const commandName of [
+  'visit',
+  'click',
+  'trigger',
+  'type',
+  'clear',
+  'reload',
+] as const) {
+  // we add 2s delays for a few commands so that stakeholders can see what's going on
+  const commandWithDelay = ((
+    command: (...args: unknown[]) => unknown,
+    ...args: unknown[]
+  ) =>
+    new Promise((resolve) => {
+      setTimeout(() => resolve(command(...args)), 1000);
+    })) as any as Cypress.CommandFnWithOriginalFn<typeof commandName>;
+
+  Cypress.Commands.overwrite(commandName, commandWithDelay);
+}
